@@ -1,0 +1,372 @@
+feature {
+  name: "Amount_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "Class_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "Time_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V10_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V11_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V12_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V13_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V14_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V15_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V16_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V17_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V18_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V19_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V1_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V20_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V21_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V22_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V23_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V24_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V25_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V26_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V27_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V28_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V2_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V3_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V4_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V5_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V6_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V7_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V8_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "V9_xf"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
