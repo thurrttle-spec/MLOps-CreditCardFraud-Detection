@@ -1,31 +1,24 @@
-# ─── Base Image ────────────────────────────────────────────────────────────────
-# Using Python 3.9-slim for compatibility with TFX 1.11.0 / TF 2.10.1
+# Use a slim base image
 FROM python:3.9-slim
 
-# ─── Environment Variables ─────────────────────────────────────────────────────
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PORT=5000 \
-    MODEL_DIR=/app/serving_model_dir/cc-fraud-model
-
-# ─── System Dependencies ───────────────────────────────────────────────────────
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgomp1 \
-    && rm -rf /var/lib/apt/lists/*
-
-# ─── Working Directory ─────────────────────────────────────────────────────────
 WORKDIR /app
 
-# ─── Install Python Dependencies ──────────────────────────────────────────────
-COPY requirements-serving.txt .
-RUN pip install --no-cache-dir -r requirements-serving.txt
+# Install only essentials
+RUN apt-get update && apt-get install -y build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# ─── Copy Application Files ────────────────────────────────────────────────────
-COPY app/ ./app/
-COPY serving_model_dir/ ./serving_model_dir/
+# Copy requirements first (for caching)
+COPY requirements.txt .
 
-# ─── Expose Port ───────────────────────────────────────────────────────────────
-EXPOSE 5000
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# ─── Run Application ──────────────────────────────────────────────────────────
-CMD ["python", "app/main.py"]
+# Copy project files
+COPY . .
+
+EXPOSE 8080
+
+# Run Flask app (adjust if FastAPI)
+CMD ["python", "app.py"]
+
+
