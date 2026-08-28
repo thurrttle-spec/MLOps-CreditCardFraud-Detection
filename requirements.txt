@@ -1,35 +1,7 @@
-# ============================================================
-# Requirements for Credit Card Fraud Detection MLOps Pipeline
-# Python 3.9 | TFX 1.11.0 | TensorFlow 2.10.1
-# ============================================================
-
-# --- Core ML Framework ---
-tensorflow==2.10.1
-
-# --- TFX Pipeline ---
-tfx==1.11.0
-
-# --- TFX Sub-libraries (pinned for compatibility) ---
-tensorflow-transform==1.11.0
-tensorflow-model-analysis==0.42.0
-tensorflow-data-validation==1.11.0
-
-# --- Hyperparameter Tuning ---
-keras-tuner==1.4.8
-
-# --- Data Processing ---
-pandas==1.5.3
-apache-beam==2.46.0
-
-# --- Standard / Utilities (transitive, pinned for stability) ---
-numpy==1.23.5
-protobuf==3.19.6
-pyarrow==9.0.0
-absl-py==1.4.0
-
-# --- Web Serving ---
 flask==2.2.5
 gunicorn==20.1.0
-
-# --- Monitoring ---
-prometheus-client==0.16.0
+numpy==1.24.3
+pandas==1.5.3
+scikit-learn==1.2.2
+tensorflow==2.12.0   # or torch==2.0.1 if you use PyTorch
+joblib==1.2.0
