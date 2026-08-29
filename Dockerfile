@@ -21,6 +21,6 @@ COPY . .
 # Expose port (sesuaikan dengan framework Anda, misal FastAPI 8000 / Streamlit 8501 / Flask 5000)
 EXPOSE 8000
 
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "main:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "main.app.main:app"]
 
 
