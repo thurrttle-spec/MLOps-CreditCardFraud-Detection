@@ -8,31 +8,35 @@ from flask import Flask, request, jsonify, render_template
 from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
 
 import os
-import urllib.request
+import kagglehub
 import pandas as pd
-from flask import Flask, jsonify
+from fastapi import FastAPI
+from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 
-DATA_PATH = "creditcard.csv"
-DATA_URL = "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud"
+# ==========================================
+# 1. UNDUH & MUAT DATASET (Di Jalankan Saat Startup)
+# ==========================================
+print("📥 Mengunduh dataset via kagglehub...")
+dataset_dir = kagglehub.dataset_download("mlg-ulb/creditcardfraud")
+csv_path = os.path.join(dataset_dir, "creditcard.csv")
 
-def ensure_data_exists():
-    if not os.path.exists(DATA_PATH):
-        print("📥 Mengunduh creditcard.csv...")
-        urllib.request.urlretrieve(DATA_URL, DATA_PATH)
-        print("✅ Unduhan selesai!")
+print("📖 Membaca dataset...")
+df = pd.read_csv(csv_path)
+print(f"✅ Dataset berhasil dimuat! Total baris: {len(df)}")
 
-# Unduh data SEBELUM memuat dataset ke pandas / memory
-ensure_data_exists()
+# ==========================================
+# 2. INISIALISASI APLIKASI WEB & METRICS
+# ==========================================
+app = FastAPI(title="Credit Card Fraud Detection API")
 
-app = Flask(__name__)
-df = pd.read_csv(DATA_PATH)
+# Contoh endpoint
+@app.get("/")
+def read_root():
+    return {"status": "online", "total_records": len(df)}
 
-@app.route("/")
-def index():
-    return jsonify({"total_rows": len(df)})
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+@app.get("/metrics")
+def metrics():
+    return generate_latest()
 
 # ─── App & Prometheus Setup ───────────────────────────────────────────────────
 app = Flask(__name__)
