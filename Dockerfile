@@ -1,24 +1,24 @@
-# Use a slim base image
-FROM python:3.9-slim
+FROM python:3.10-slim
+
+# Mencegah Python menulis file .pyc dan buffering stdout
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-# Install only essentials
-RUN apt-get update && apt-get install -y build-essential \
+# Install dependensi sistem yang minimal
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first (for caching)
+# Salin requirements dan install terlebih dahulu (agar ter-cache)
 COPY requirements.txt .
-
-# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project files
+# Salin seluruh file proyek
 COPY . .
 
-EXPOSE 8080
+# Expose port (sesuaikan dengan framework Anda, misal FastAPI 8000 / Streamlit 8501 / Flask 5000)
+EXPOSE 8000
 
-# Run Flask app (adjust if FastAPI)
-CMD ["python", "app.py"]
-
-
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
