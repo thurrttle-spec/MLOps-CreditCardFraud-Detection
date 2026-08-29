@@ -7,6 +7,33 @@ import tensorflow as tf
 from flask import Flask, request, jsonify, render_template
 from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
 
+import os
+import urllib.request
+import pandas as pd
+from flask import Flask, jsonify
+
+DATA_PATH = "creditcard.csv"
+DATA_URL = "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud"
+
+def ensure_data_exists():
+    if not os.path.exists(DATA_PATH):
+        print("📥 Mengunduh creditcard.csv...")
+        urllib.request.urlretrieve(DATA_URL, DATA_PATH)
+        print("✅ Unduhan selesai!")
+
+# Unduh data SEBELUM memuat dataset ke pandas / memory
+ensure_data_exists()
+
+app = Flask(__name__)
+df = pd.read_csv(DATA_PATH)
+
+@app.route("/")
+def index():
+    return jsonify({"total_rows": len(df)})
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
 # ─── App & Prometheus Setup ───────────────────────────────────────────────────
 app = Flask(__name__)
 
