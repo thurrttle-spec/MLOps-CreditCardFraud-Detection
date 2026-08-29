@@ -6,3 +6,7 @@ __pycache__/
 *.parquet
 .env
 mlruns/
+git rm --cached creditcard.csv
+echo "creditcard.csv" >> .gitignore
+git commit -m "remove creditcard.csv from git tracking"
+git push
