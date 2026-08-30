@@ -78,13 +78,4 @@ docker build -t cc-fraud-app .
 docker run -p 5000:5000 cc-fraud-app
 
 # Akses di http://localhost:5000
-```
 
-```
-
-
-heroku container:release web -a m-fathurrohman-cc-fraud
-
-# Buka app
-heroku open -a m-fathurrohman-cc-fraud
-```
