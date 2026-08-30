@@ -70,12 +70,5 @@ pip install -r requirements.txt
 jupyter notebook credit_card_fraud_pipeline.ipynb
 ```
 
-## Cara Menjalankan Web App Lokal
 
-```bash
-# Build & run Docker container
-docker build -t cc-fraud-app .
-docker run -p 5000:5000 cc-fraud-app
-
-# Akses di http://localhost:5000
 
