@@ -80,28 +80,9 @@ docker run -p 5000:5000 cc-fraud-app
 # Akses di http://localhost:5000
 ```
 
-## Cara Menjalankan Monitoring
-
-```bash
-cd monitoring/
-docker-compose up -d
-
-# Akses Prometheus di http://localhost:9090
-# Akses Grafana di http://localhost:3000
 ```
 
-## Deploy ke Heroku
 
-```bash
-# Login ke Heroku Container Registry
-heroku login
-heroku container:login
-
-# Buat Heroku app
-heroku create m-fathurrohman-cc-fraud
-
-# Build & push Docker image
-heroku container:push web -a m-fathurrohman-cc-fraud
 heroku container:release web -a m-fathurrohman-cc-fraud
 
 # Buka app
